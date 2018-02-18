@@ -1,0 +1,32 @@
+<html>
+<head>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+  <script>
+  var malidata = [63.8, 30.1, 75.9, 62.4, 59.5, 65.8, 68.2, 76.2, 76.8, 78.7, 92.8, 28.6];
+    
+    var svg = d3.select('body')
+            .append('svg')
+              .attr('width', 500)
+              .attr('height', 150);
+
+svg.selectAll('rect')
+  .data(malidata)
+  .enter()
+  .append('rect')
+    .attr('x', function(d, i){
+      return i * 25;
+    })
+    .attr('width', 15)
+    .attr('fill', '#d1c9b8')
+    .attr('height', function(d){
+      return d/4 * 4.84;
+    })
+    .attr('y', function(d){
+      return 126 - d/4 * 1.44;
+    });
+					
+  </script>
+</body>
+</html>

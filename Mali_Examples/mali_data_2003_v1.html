@@ -1,0 +1,41 @@
+<html>
+<head>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+ 
+<body>
+  <svg width="400" height="500"> 
+    //shapes go here in svg
+<rect x="0" width="15" fill="pink"></rect> 
+<rect x="25" width="15" fill="green"></rect>
+<rect x="50" width="15" fill="blue"></rect>
+<rect x="75" width="15" fill="yellow"></rect>
+<rect x="100" width="15" fill="orange"></rect> 
+<rect x="125" width="15" fill="grey"></rect>
+<rect x="150" width="15" fill="red"></rect>
+<rect x="175" width="15" fill="brown"></rect>
+<rect x="200" width="15" fill="black"></rect> 
+<rect x="225" width="15" fill="silver"></rect>
+<rect x="250" width="15" fill="teal"></rect>
+<rect x="275" width="15" fill="purple"></rect>
+  </svg>
+  
+  <script>
+    //data goes here 
+  var malidata = [63.8, 30.1, 75.9, 62.4, 59.5, 65.8, 68.2, 76.2, 76.8, 78.7, 92.8, 28.6];
+
+
+// think of this as the engine that makes it all run
+    d3.selectAll('rect')
+  .data(malidata)
+  .attr('height', function(d){
+    return d/2 * 1.5;
+  })
+  .attr('y', function(d){
+    return 150 - d/2 * 1.5;
+  });
+
+  </script>
+  </script>
+</body>
+</html>
